@@ -4,9 +4,32 @@
 
 @layer base {
   @font-face {
+    /** Sans font */
     font-family: "secularone";
     font-weight: 400;
-    src: url("/fonts/secularone-400.woff2") format("woff2"),
-      url("/fonts/secularone-400.ttf") format("truetype");
+    src: url("/fonts/sans/secularone-400.woff2") format("woff2"),
+      url("/fonts/sans/secularone-400.ttf") format("truetype");
+  }
+
+  @font-face {
+    /** Body font */
+    font-family: "redhatdisplay";
+    font-weight: 400;
+    src: url("/fonts/body/redhatdisplay-400.woff2") format("woff2"),
+      url("/fonts/body/redhatdisplay-400.ttf") format("truetype");
+  }
+  @font-face {
+    /** Body font */
+    font-family: "redhatdisplay";
+    font-weight: 500;
+    src: url("/fonts/body/redhatdisplay-500.woff2") format("woff2"),
+      url("/fonts/body/redhatdisplay-500.ttf") format("truetype");
+  }
+  @font-face {
+    /** Body font */
+    font-family: "redhatdisplay";
+    font-weight: 600;
+    src: url("/fonts/body/redhatdisplay-600.woff2") format("woff2"),
+      url("/fonts/body/redhatdisplay-600.ttf") format("truetype");
   }
 }

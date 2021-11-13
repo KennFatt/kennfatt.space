@@ -12,6 +12,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["secularone", ...theme.fontFamily.sans],
+        body: "redhatdisplay",
       },
     },
   },
