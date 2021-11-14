@@ -2,7 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  /** Import typoegraphy related things. */
-  @import "_typography.scss";
-}
+/** Import typography related things. */
+@import "_typography.scss";
