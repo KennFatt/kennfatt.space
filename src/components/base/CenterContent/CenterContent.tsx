@@ -3,7 +3,7 @@ import type { FC } from "react";
 /**
  * Component CenterContent's props.
  */
-export interface ICenterContent { }
+export interface ICenterContent {}
 
 /**
  * Component CenterContent
