@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/react": "17.0.30",
+    "clsx": "^1.1.1",
     "eslint": "<8.0.0",
     "eslint-config-next": "11.1.2",
     "plop": "^2.7.6",
