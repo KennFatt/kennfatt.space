@@ -26,8 +26,8 @@ export const CenterContent: FC<ICenterContent> = ({ px, py, children }) => {
   const paddingClass = clsx({
     // x-axis
     "px-2 md:px-4": px === "s",
-    "px-4 md:px-8": px === "m" || !px, // default
-    "px-6 md:px-12": px === "l",
+    "px-4 md:px-8": px === "m",
+    "px-6 md:px-12": px === "l" || !px, // default
 
     // y-axis
     "py-2 md:py-4": py === "s",
@@ -36,6 +36,6 @@ export const CenterContent: FC<ICenterContent> = ({ px, py, children }) => {
   });
 
   return (
-    <div className={`max-w-8xl w-full mx-auto ${paddingClass}`}>{children}</div>
+    <div className={`max-w-6xl w-full mx-auto ${paddingClass}`}>{children}</div>
   );
 };
