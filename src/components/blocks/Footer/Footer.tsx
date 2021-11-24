@@ -23,6 +23,8 @@ export const Footer: FC<IFooter> = () => {
               href={`${process.env.NEXT_PUBLIC_CONTACT_GITHUB}/kennfatt.space`}
               target="_blank"
               rel="noreferrer noopener"
+              title="Love"
+              tabIndex={-1}
             >
               &hearts;
             </a>{" "}
