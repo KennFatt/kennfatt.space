@@ -13,8 +13,8 @@ module.exports = {
         "base-dim": "#E4E4E4",
       },
       fontFamily: {
-        sans: ["secularone", ...theme.fontFamily.sans],
-        body: "redhatdisplay",
+        sans: ["redhatdisplay", ...theme.fontFamily.sans],
+        serif: ["secularone", ...theme.fontFamily.serif],
       },
       maxWidth: {
         "8xl": "1440px",
