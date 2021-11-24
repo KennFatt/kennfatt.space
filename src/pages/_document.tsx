@@ -4,8 +4,24 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
-        <body className="bg-base-light">
+        <Head>
+          <link
+            rel="preload"
+            href="/fonts/sans/secularone-400.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/body/redhatdisplay-400.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        </Head>
+
+        <body className="bg-base-light text-primary-dark text-lg tracking-wide">
           <Main />
           <NextScript />
         </body>
