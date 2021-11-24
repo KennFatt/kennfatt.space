@@ -2,5 +2,6 @@
   "semi": true,
   "jsxBracketSameLine": true,
   "proseWrap": "never",
-  "embeddedLanguageFormatting": "off"
+  "embeddedLanguageFormatting": "off",
+  "tabWidth": 2
 }
