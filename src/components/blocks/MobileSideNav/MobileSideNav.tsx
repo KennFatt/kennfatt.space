@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import type { SyntheticEvent } from "react";
 import { useMediaQuery } from "react-responsive";
-import { useSideNavStore } from "store/sidenav-store";
+import { useSideNavStore, toggleSideNav } from "stores/sidenav-store";
 
 /**
  * Component MobileSideNav's props.
@@ -14,7 +14,6 @@ export interface IMobileSideNav {}
 export const MobileSideNav: FC<IMobileSideNav> = () => {
   const isMediumScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
-  const toggleSideNav = useSideNavStore((state) => state.toggleSideNav);
   const isSideNavToggled = useSideNavStore((state) => state.isSideNavToggled);
 
   useEffect(() => {

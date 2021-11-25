@@ -6,7 +6,7 @@ import { CenterContent } from "components/base/CenterContent";
 import { NavItem } from "components/NavItem";
 import type { INavItem } from "components/NavItem";
 
-import { useSideNavStore } from "store/sidenav-store";
+import { toggleSideNav } from "stores/sidenav-store";
 
 import { TOP_LEVEL_NAV } from "lib/consts";
 
@@ -24,8 +24,6 @@ export interface ITopNav {}
  */
 export const TopNav: FC<ITopNav> = () => {
   const router = useRouter();
-
-  const toggleSideNav = useSideNavStore((state) => state.toggleSideNav);
 
   /** TODO: store this into zustand store? and consume inside individual `<NavItem>` component? */
   const navDestinations: INavItem[] = TOP_LEVEL_NAV.map((pageName) => {
