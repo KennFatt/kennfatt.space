@@ -11,7 +11,8 @@
     "prepare": "husky install",
     "new:component": "plop component",
     "new:component-blocks": "plop component-blocks",
-    "new:component-utils": "plop component-utils"
+    "new:component-utils": "plop component-utils",
+    "new:component-layout": "plop component-layout"
   },
   "dependencies": {
     "autoprefixer": "^10.3.7",

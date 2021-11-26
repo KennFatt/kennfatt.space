@@ -12,6 +12,7 @@ const promptName = {
  * - new:component <name>           Generate a normal (yet) atomic component. I.e. Card, Button, Custom list, etc.
  * - new:component-blocks <name>    Geneare a block-based component. I.e. Hero, Blog post, CTA container, etc.
  * - new:component-utils <name>     Generate a helper component that does not affect the view. I.e. SEO or Helmet.
+ * - new:component-layout <name>    Generate a layout component that will be used across pages.
  */
 module.exports = (/** @type {import("plop").NodePlopAPI} */ plop) => {
   /** plop component <name> */
@@ -21,17 +22,17 @@ module.exports = (/** @type {import("plop").NodePlopAPI} */ plop) => {
     actions: [
       {
         type: "add",
-        path: `${COMPONENTS_DIRECTORY}/{{pascalCase name}}/{{pascalCase name}}.tsx`,
+        path: `${COMPONENTS_DIRECTORY}/base/{{pascalCase name}}/{{pascalCase name}}.tsx`,
         templateFile: `${TEMPLATES_DIRECTORY}/Component.tsx.hbs`,
       },
       {
         type: "add",
-        path: `${COMPONENTS_DIRECTORY}/{{pascalCase name}}/{{pascalCase name}}.module.scss`,
+        path: `${COMPONENTS_DIRECTORY}/base/{{pascalCase name}}/{{pascalCase name}}.module.scss`,
         templateFile: `${TEMPLATES_DIRECTORY}/Component.module.scss.hbs`,
       },
       {
         type: "add",
-        path: `${COMPONENTS_DIRECTORY}/{{pascalCase name}}/index.ts`,
+        path: `${COMPONENTS_DIRECTORY}/base/{{pascalCase name}}/index.ts`,
         templateFile: `${TEMPLATES_DIRECTORY}/index.ts.hbs`,
       },
     ],
@@ -73,6 +74,29 @@ module.exports = (/** @type {import("plop").NodePlopAPI} */ plop) => {
       {
         type: "add",
         path: `${COMPONENTS_DIRECTORY}/utils/{{pascalCase name}}/index.ts`,
+        templateFile: `${TEMPLATES_DIRECTORY}/index.ts.hbs`,
+      },
+    ],
+  });
+
+  /** plop component-layout <name> */
+  plop.setGenerator("component-layout", {
+    description: "Create a new React layout component",
+    prompts: [promptName],
+    actions: [
+      {
+        type: "add",
+        path: `${COMPONENTS_DIRECTORY}/layout/{{pascalCase name}}/{{pascalCase name}}.tsx`,
+        templateFile: `${TEMPLATES_DIRECTORY}/Component.tsx.hbs`,
+      },
+      {
+        type: "add",
+        path: `${COMPONENTS_DIRECTORY}/layout/{{pascalCase name}}/{{pascalCase name}}.module.scss`,
+        templateFile: `${TEMPLATES_DIRECTORY}/Component.module.scss.hbs`,
+      },
+      {
+        type: "add",
+        path: `${COMPONENTS_DIRECTORY}/layout/{{pascalCase name}}/index.ts`,
         templateFile: `${TEMPLATES_DIRECTORY}/index.ts.hbs`,
       },
     ],
