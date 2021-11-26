@@ -1,6 +1,7 @@
 import type { FC } from "react";
+import { memo } from "react";
 import { CenterContent } from "components/base/CenterContent";
-import { ContactItem } from "./ContactItem";
+import { ContactIconLink } from "components/base/ContactIconLink";
 
 /**
  * Component Footer's props.
@@ -10,7 +11,7 @@ export interface IFooter {}
 /**
  * Component Footer
  */
-export const Footer: FC<IFooter> = () => {
+export const Footer: FC<IFooter> = memo(() => {
   return (
     <footer className="border-primary-dark md:text-base text-sm border-b-[20px]">
       <CenterContent py="l">
@@ -32,31 +33,31 @@ export const Footer: FC<IFooter> = () => {
           </p>
 
           <ul className="md:flex hidden space-x-4">
-            <ContactItem
+            <ContactIconLink
               href={`${process.env.NEXT_PUBLIC_CONTACT_GITHUB}`}
               title="GitHub"
               iconUrl="/static/vectors/socials/github.svg"
             />
 
-            <ContactItem
+            <ContactIconLink
               href={`${process.env.NEXT_PUBLIC_CONTACT_HACKERRANK}`}
               title="HackerRank"
               iconUrl="/static/vectors/socials/hackerrank.svg"
             />
 
-            <ContactItem
+            <ContactIconLink
               href={`${process.env.NEXT_PUBLIC_CONTACT_TWITTER}`}
               title="Twitter"
               iconUrl="/static/vectors/socials/twitter.svg"
             />
 
-            <ContactItem
+            <ContactIconLink
               href={`${process.env.NEXT_PUBLIC_CONTACT_DRIBBBLE}`}
               title="Dribbble"
               iconUrl="/static/vectors/socials/dribbble.svg"
             />
 
-            <ContactItem
+            <ContactIconLink
               href={`${process.env.NEXT_PUBLIC_CONTACT_LINKEDIN}`}
               title="LinkedIn"
               iconUrl="/static/vectors/socials/linkedin.svg"
@@ -66,4 +67,5 @@ export const Footer: FC<IFooter> = () => {
       </CenterContent>
     </footer>
   );
-};
+});
+Footer.displayName = "Footer";
