@@ -1,4 +1,4 @@
-import type { FC, ImgHTMLAttributes } from "react";
+import type { FC } from "react";
 import Image from "next/image";
 
 /**
@@ -18,7 +18,7 @@ export const ContactIconLink: FC<IContactIconLink> = ({
   title,
   iconUrl,
 }) => {
-  const imgProps: ImgHTMLAttributes<{}> = {
+  const imgProps = {
     src: iconUrl,
     alt: title,
     className: "pointer-events-none select-none",
