@@ -1,14 +1,12 @@
 import type { AppProps } from "next/app";
-import Head from "next/head";
+import { Seo } from "components/utils/Seo";
 
 import "../../styles/globals.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <title>Kennan Fattahillah&#39;s Space</title>
-      </Head>
+      <Seo />
       <Component {...pageProps} />
     </>
   );
