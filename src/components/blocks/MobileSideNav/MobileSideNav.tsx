@@ -1,6 +1,10 @@
-import { FC, useEffect } from "react";
-import type { SyntheticEvent } from "react";
+import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import type { FC } from "react";
+import type { SyntheticEvent } from "react";
+
+import { NavItemsGroup } from "components/base/NavItemsGroup";
+
 import { useSideNavStore, toggleSideNav } from "stores/sidenav-store";
 
 /**
@@ -9,7 +13,8 @@ import { useSideNavStore, toggleSideNav } from "stores/sidenav-store";
 export interface IMobileSideNav {}
 
 /**
- * Component MobileSideNav
+ * Component MobileSideNav is used to render side navigation on mobile device.
+ * It's smart enough to maintain its own state (toggled on or off).
  */
 export const MobileSideNav: FC<IMobileSideNav> = () => {
   const isMediumScreen = useMediaQuery({ query: "(min-width: 768px)" });
@@ -44,7 +49,9 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
       className="bg-primary-dark/25 fixed inset-0"
       onClickCapture={offcanvasClicked}
     >
-      <nav className="bg-base-light absolute top-0 right-0 w-full h-screen max-w-xs"></nav>
+      <nav className="bg-base-light absolute top-0 right-0 w-full h-screen max-w-xs">
+        <NavItemsGroup direction="vertical" space="s" />
+      </nav>
     </div>
   );
 };

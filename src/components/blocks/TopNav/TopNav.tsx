@@ -1,14 +1,10 @@
-import type { FC } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { forwardRef } from "react";
 
 import { CenterContent } from "components/base/CenterContent";
-import { NavItem } from "components/NavItem";
-import type { INavItem } from "components/NavItem";
+import { NavItemsGroup } from "components/base/NavItemsGroup";
 
 import { toggleSideNav } from "stores/sidenav-store";
-
-import { TOP_LEVEL_NAV } from "lib/consts";
 
 /**
  * Component TopNav's props.
@@ -22,40 +18,25 @@ export interface ITopNav {}
  * The navigation items are generated based on the constant: TOP_LEVEL_NAV.
  *  And it should respect to my top level page in the sitemap.
  */
-export const TopNav: FC<ITopNav> = () => {
-  const router = useRouter();
-
-  /** TODO: store this into zustand store? and consume inside individual `<NavItem>` component? */
-  const navDestinations: INavItem[] = TOP_LEVEL_NAV.map((pageName) => {
-    /** take index n = because it's top level navigation */
-    const currentPathName = router.asPath.split("/")[1].toLowerCase();
-
-    return {
-      name: pageName,
-      isActive: currentPathName === pageName,
-    };
-  });
-
+export const TopNav = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <header>
+    <header ref={ref}>
       <CenterContent py="m">
-        <nav className="flex items-center justify-between font-serif">
+        <nav className="flex items-center justify-between">
           {/* LHS */}
           <Link href="/">
             <a
               title="Kennan Fattahillah"
-              className="text-primary-light text-6xl outline-none"
+              className="text-primary-light font-serif text-6xl outline-none"
             >
               KF
             </a>
           </Link>
 
           {/* RHS: desktop */}
-          <ul className="md:flex hidden space-x-6 text-2xl font-medium">
-            {navDestinations.map(({ name, isActive }, idx) => (
-              <NavItem key={idx} name={name} isActive={isActive} />
-            ))}
-          </ul>
+          <div className="md:block hidden">
+            <NavItemsGroup />
+          </div>
 
           {/* RHS: mobile */}
           <button className="md:hidden outline-none" onClick={toggleSideNav}>
@@ -78,4 +59,5 @@ export const TopNav: FC<ITopNav> = () => {
       </CenterContent>
     </header>
   );
-};
+});
+TopNav.displayName = "TopNav";
