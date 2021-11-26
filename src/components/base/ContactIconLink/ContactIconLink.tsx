@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { FC, ImgHTMLAttributes } from "react";
 import Image from "next/image";
 
 /**
@@ -18,6 +18,18 @@ export const ContactIconLink: FC<IContactIconLink> = ({
   title,
   iconUrl,
 }) => {
+  const imgProps: ImgHTMLAttributes<{}> = {
+    src: iconUrl,
+    alt: title,
+    className: "pointer-events-none select-none",
+  };
+
+  const imgContent = process.env.NODE_ENV ? (
+    <img {...imgProps} />
+  ) : (
+    <Image {...imgProps} width={24} height={24} />
+  );
+
   return (
     <li>
       <a
@@ -27,13 +39,7 @@ export const ContactIconLink: FC<IContactIconLink> = ({
         rel="noreferrer noopener"
         tabIndex={-1}
       >
-        <Image
-          src={iconUrl}
-          alt={title}
-          className="pointer-events-none select-none"
-          width={24}
-          height={24}
-        />
+        {imgContent}
       </a>
     </li>
   );
