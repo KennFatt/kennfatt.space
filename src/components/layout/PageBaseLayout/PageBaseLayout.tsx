@@ -1,4 +1,5 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import type { FC } from "react";
 
 import { Seo } from "components/utils/Seo";
@@ -31,7 +32,7 @@ export const PageBaseLayout: FC<IPageBaseLayout> = ({
   const headerRef = useRef<HTMLElement | null>(null);
   const [headerHeight, setHeaderHeight] = useState<number | undefined>(0);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setHeaderHeight(headerRef.current?.offsetHeight);
   }, [headerRef.current?.offsetHeight]);
 
