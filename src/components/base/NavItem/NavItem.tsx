@@ -27,7 +27,7 @@ export const NavItem: FC<INavItem> = ({ name, isActive }) => {
       <Link href={`/${name.toLowerCase()}`}>
         <a
           title={capitalizedName}
-          className={`custom-outline w-full inline-block text-center ${aClass}`}
+          className={`custom-outline w-full inline-block ${aClass}`}
           tabIndex={1}
         >
           {capitalizedName}

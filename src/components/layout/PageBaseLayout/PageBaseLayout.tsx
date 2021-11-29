@@ -1,11 +1,17 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
-import type { FC } from "react";
+import type { FC, CSSProperties } from "react";
 
 import { Seo } from "components/utils/Seo";
 import { TopNav } from "components/blocks/TopNav";
 import { Footer } from "components/blocks/Footer";
 import { MobileSideNav } from "components/blocks/MobileSideNav";
+
+import {
+  useHeaderHeightStore,
+  setHeaderHeight,
+} from "stores/header-height-store";
+import type { IHeaderHeightStore } from "stores/header-height-store";
 
 /**
  * Component PageBaseLayout's props.
@@ -14,6 +20,8 @@ export interface IPageBaseLayout {
   pageName?: string;
   pageDescription?: string;
 }
+
+const headerHeightSelector = (state: IHeaderHeightStore) => state.offsetHeight;
 
 /**
  * Component PageBaseLayout
@@ -30,11 +38,15 @@ export const PageBaseLayout: FC<IPageBaseLayout> = ({
    * 2. <main> element height
    */
   const headerRef = useRef<HTMLElement | null>(null);
-  const [headerHeight, setHeaderHeight] = useState<number | undefined>(0);
+  const headerHeight = useHeaderHeightStore(headerHeightSelector);
 
   useIsomorphicLayoutEffect(() => {
     setHeaderHeight(headerRef.current?.offsetHeight);
   }, [headerRef.current?.offsetHeight]);
+
+  const mainContentStyle: CSSProperties = {
+    minHeight: `calc(100vh - ${headerHeight}px)`,
+  };
 
   return (
     <>
@@ -43,13 +55,7 @@ export const PageBaseLayout: FC<IPageBaseLayout> = ({
       <TopNav ref={headerRef} />
       <MobileSideNav />
 
-      <main
-        style={{
-          minHeight: `calc(100vh - ${headerHeight}px)`,
-        }}
-      >
-        {children}
-      </main>
+      <main style={mainContentStyle}>{children}</main>
 
       <Footer />
     </>

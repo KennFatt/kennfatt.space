@@ -4,8 +4,10 @@ import type { FC } from "react";
 import type { SyntheticEvent } from "react";
 
 import { NavItemsGroup } from "components/base/NavItemsGroup";
+import { ContactIconLinksGroup } from "components/base/ContactIconLinksGroup";
 
 import { useSideNavStore, toggleSideNav } from "stores/sidenav-store";
+import { useHeaderHeightStore } from "stores/header-height-store";
 
 /**
  * Component MobileSideNav's props.
@@ -20,6 +22,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
   const isMediumScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
   const isSideNavToggled = useSideNavStore((state) => state.isSideNavToggled);
+  const headerHeight = useHeaderHeightStore((state) => state.offsetHeight);
 
   useEffect(() => {
     /** Disable scrolling */
@@ -28,8 +31,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
     if (isSideNavToggled && isMediumScreen) {
       toggleSideNav();
     }
-  }),
-    [isSideNavToggled, isMediumScreen];
+  }, [isSideNavToggled, isMediumScreen]);
 
   /** Toggle the side nav off when clicking overlay element. */
   const offcanvasClicked = (ev: SyntheticEvent) => {
@@ -49,8 +51,39 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
       className="bg-primary-dark/25 fixed inset-0"
       onClickCapture={offcanvasClicked}
     >
-      <nav className="bg-base-light absolute top-0 right-0 w-full h-screen max-w-xs">
+      <nav className="bg-base-light absolute top-0 right-0 w-full h-screen max-w-xs px-6">
+        {/* Toggle off side nav */}
+        <div
+          style={{ minHeight: `${headerHeight}px` }}
+          className="flex items-center justify-end"
+        >
+          <button onClick={toggleSideNav} className="outline-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Navigation */}
         <NavItemsGroup direction="vertical" space="s" />
+
+        <hr className="border-base-dim mt-4 mb-6" />
+
+        {/* Contact */}
+        <ul className="flex justify-between">
+          <ContactIconLinksGroup />
+        </ul>
       </nav>
     </div>
   );

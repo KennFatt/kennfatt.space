@@ -27,7 +27,7 @@ export const TopNav = forwardRef<HTMLElement>((_, ref) => {
           <Link href="/">
             <a
               title="Kennan Fattahillah"
-              className="text-primary-light font-serif text-6xl outline-none"
+              className="text-primary-light md:text-6xl font-serif text-5xl outline-none"
             >
               KF
             </a>

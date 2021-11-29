@@ -38,6 +38,7 @@ export const ContactIconLink: FC<IContactIconLink> = ({
         target="_blank"
         rel="noreferrer noopener"
         tabIndex={-1}
+        className="outline-none"
       >
         {imgContent}
       </a>

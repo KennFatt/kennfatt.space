@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { memo } from "react";
 import { CenterContent } from "components/base/CenterContent";
-import { ContactIconLink } from "components/base/ContactIconLink";
+import { ContactIconLinksGroup } from "components/base/ContactIconLinksGroup";
 
 /**
  * Component Footer's props.
@@ -33,35 +33,7 @@ export const Footer: FC<IFooter> = memo(() => {
           </p>
 
           <ul className="md:flex hidden space-x-4">
-            <ContactIconLink
-              href={`${process.env.NEXT_PUBLIC_CONTACT_GITHUB}`}
-              title="GitHub"
-              iconUrl="/static/vectors/socials/github.svg"
-            />
-
-            <ContactIconLink
-              href={`${process.env.NEXT_PUBLIC_CONTACT_HACKERRANK}`}
-              title="HackerRank"
-              iconUrl="/static/vectors/socials/hackerrank.svg"
-            />
-
-            <ContactIconLink
-              href={`${process.env.NEXT_PUBLIC_CONTACT_TWITTER}`}
-              title="Twitter"
-              iconUrl="/static/vectors/socials/twitter.svg"
-            />
-
-            <ContactIconLink
-              href={`${process.env.NEXT_PUBLIC_CONTACT_DRIBBBLE}`}
-              title="Dribbble"
-              iconUrl="/static/vectors/socials/dribbble.svg"
-            />
-
-            <ContactIconLink
-              href={`${process.env.NEXT_PUBLIC_CONTACT_LINKEDIN}`}
-              title="LinkedIn"
-              iconUrl="/static/vectors/socials/linkedin.svg"
-            />
+            <ContactIconLinksGroup />
           </ul>
         </div>
       </CenterContent>

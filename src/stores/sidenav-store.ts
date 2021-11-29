@@ -1,6 +1,6 @@
 import create from "zustand";
 
-type ISideNavStore = {
+export type ISideNavStore = {
   isSideNavToggled: boolean;
 };
 
