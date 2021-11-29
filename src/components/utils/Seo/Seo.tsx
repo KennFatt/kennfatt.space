@@ -34,7 +34,7 @@ export const Seo: FC<ISeo> = ({ title, description }) => {
 
   const meta = {
     title: title ? `${title} | ${defaultMeta.title}` : defaultMeta.title,
-    description: description || defaultMeta.title,
+    description: description || defaultMeta.description,
   };
 
   return (

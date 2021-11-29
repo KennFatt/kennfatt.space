@@ -12,11 +12,6 @@ import "styles/globals.scss";
 import "styles/custom-nprogress.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Seo />
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }
 export default MyApp;
