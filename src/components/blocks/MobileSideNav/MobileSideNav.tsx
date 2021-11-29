@@ -47,8 +47,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
 
   return (
     <div
-      id="offcanvas"
-      className="bg-primary-dark/25 fixed inset-0 z-50"
+      className="bg-primary-dark/25 fixed inset-0"
       onClickCapture={offcanvasClicked}
     >
       <nav className="bg-base-light absolute top-0 right-0 w-full h-screen max-w-xs px-6">
@@ -60,7 +59,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
           <button onClick={toggleSideNav} className="outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8"
+              className="w-6 h-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -68,7 +67,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={3}
+                strokeWidth={2}
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>

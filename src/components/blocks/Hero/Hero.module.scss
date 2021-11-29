@@ -1,0 +1,15 @@
+/** Component Hero's style. */
+.highlighted {
+  @apply text-primary-light;
+}
+
+.strike-out {
+  text-decoration-line: line-through;
+
+  /** Partially supported by modern browsers */
+  text-decoration-thickness: 0.25rem;
+
+  @media only screen and (min-width: 1024px) {
+    text-decoration-thickness: 0.5rem;
+  }
+}
