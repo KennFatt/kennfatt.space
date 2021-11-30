@@ -7,7 +7,6 @@ import { NavItemsGroup } from "components/base/NavItemsGroup";
 import { ContactIconLinksGroup } from "components/base/ContactIconLinksGroup";
 
 import { useSideNavStore, toggleSideNav } from "stores/sidenav-store";
-import { useHeaderHeightStore } from "stores/header-height-store";
 
 /**
  * Component MobileSideNav's props.
@@ -22,7 +21,6 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
   const isMediumScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
   const isSideNavToggled = useSideNavStore((state) => state.isSideNavToggled);
-  const headerHeight = useHeaderHeightStore((state) => state.offsetHeight);
 
   useEffect(() => {
     /** Disable scrolling */
@@ -52,10 +50,8 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
     >
       <nav className="bg-base-light absolute top-0 right-0 w-full h-screen max-w-xs px-6">
         {/* Toggle off side nav */}
-        <div
-          style={{ minHeight: `${headerHeight}px` }}
-          className="flex items-center justify-end"
-        >
+        {/* The `min-h-[]` class name is measured by calculating top nav header's height. */}
+        <div className="flex items-center justify-end min-h-[5rem] md:min-h-[7.75rem]">
           <button onClick={toggleSideNav} className="outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"

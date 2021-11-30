@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { forwardRef } from "react";
+import type { FC } from "react";
 
 import { CenterContent } from "components/base/CenterContent";
 import { NavItemsGroup } from "components/base/NavItemsGroup";
@@ -18,9 +18,9 @@ export interface ITopNav {}
  * The navigation items are generated based on the constant: TOP_LEVEL_NAV.
  *  And it should respect to my top level page in the sitemap.
  */
-export const TopNav = forwardRef<HTMLElement>((_, ref) => {
+export const TopNav: FC<ITopNav> = () => {
   return (
-    <header ref={ref}>
+    <header>
       <CenterContent py="m">
         <nav className="flex items-center justify-between">
           {/* LHS */}
@@ -59,5 +59,4 @@ export const TopNav = forwardRef<HTMLElement>((_, ref) => {
       </CenterContent>
     </header>
   );
-});
-TopNav.displayName = "TopNav";
+};
