@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
           />
         </Head>
 
-        <body className="bg-base-light text-primary-dark selection:bg-primary-light selection:text-base-light text-lg tracking-wide">
+        <body className="document-base">
           <Main />
           <NextScript />
         </body>
