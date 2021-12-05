@@ -7,6 +7,7 @@ import type { IContactIconLink } from "components/base/ContactIconLink";
  * Primarily used in navigation component.
  */
 export const TOP_LEVEL_NAV = ["about", "blog", "projects", "stars"];
+// export const TOP_LEVEL_NAV = ["about", "blog", "projects", "stars"];
 
 /**
  * List of all my contact and its URL.
