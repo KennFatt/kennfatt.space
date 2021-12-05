@@ -1,0 +1,19 @@
+{
+  "name": "Kennan Fattahillah",
+  "short_name": "KennFatt's Space",
+  "icons": [
+    {
+      "src": "/static/seo/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/seo/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#678349",
+  "background_color": "#F9F9F8",
+  "display": "standalone"
+}

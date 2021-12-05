@@ -14,7 +14,7 @@ const defaultMeta = {
   title: "Kennan Fattahillah",
   description:
     "My space to share useful information for myself and hopefully for you too! The topic often about tech, books, or my thoughts about the world.",
-  thumbnail: `${process.env.NEXT_PUBLIC_CANONICAL_URL}/static/images/tile-wide.png`,
+  thumbnail: `${process.env.NEXT_PUBLIC_CANONICAL_URL}/static/seo/tile-wide.png`,
 };
 
 /**
