@@ -19,6 +19,15 @@ export default class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
+
+          <link rel="icon" href="/favicon.ico" sizes="any" />
+          <link
+            rel="apple-touch-icon"
+            href="/static/seo/apple-touch-icon.png"
+          />
+
+          <link rel="manifest" href="/static/seo/site.webmanifest" />
+          <meta name="theme-color" content="#678349" />
         </Head>
 
         <body className="document-base">
