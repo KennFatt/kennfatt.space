@@ -39,3 +39,13 @@ export const CONTACT_LIST: IContactIconLink[] = [
     iconUrl: "/static/vectors/socials/linkedin.svg",
   },
 ];
+
+/**
+ * Default meta content for SEO related things.
+ */
+export const SEO_META_FALLBACK = {
+  title: "Kennan Fattahillah",
+  description:
+    "My space to share useful information for myself and hopefully for you too! The topic often about tech, books, or my thoughts about the world.",
+  thumbnail: `${process.env.NEXT_PUBLIC_CANONICAL_URL}/static/seo/tile-wide.png`,
+};

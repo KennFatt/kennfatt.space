@@ -2,6 +2,8 @@ import type { FC } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
+import { SEO_META_FALLBACK } from "lib/consts";
+
 /**
  * Component Seo's props.
  */
@@ -9,13 +11,6 @@ export interface ISeo {
   title?: string;
   description?: string;
 }
-
-const defaultMeta = {
-  title: "Kennan Fattahillah",
-  description:
-    "My space to share useful information for myself and hopefully for you too! The topic often about tech, books, or my thoughts about the world.",
-  thumbnail: `${process.env.NEXT_PUBLIC_CANONICAL_URL}/static/seo/tile-wide.png`,
-};
 
 /**
  * Component Seo is a helper component to prevent DRY to setup page's metadata.
@@ -33,15 +28,17 @@ export const Seo: FC<ISeo> = ({ title, description }) => {
   const router = useRouter();
 
   const meta = {
-    title: title ? `${title} | ${defaultMeta.title}` : defaultMeta.title,
-    description: description || defaultMeta.description,
+    title: title
+      ? `${title} | ${SEO_META_FALLBACK.title}`
+      : SEO_META_FALLBACK.title,
+    description: description || SEO_META_FALLBACK.description,
   };
 
   return (
     <Head>
       <title>{meta.title}</title>
       <meta name="title" content={meta.title} />
-      <meta name="author" content={defaultMeta.title} />
+      <meta name="author" content={SEO_META_FALLBACK.title} />
       <meta name="description" content={meta.description} />
       <link
         rel="canonical"
@@ -56,7 +53,7 @@ export const Seo: FC<ISeo> = ({ title, description }) => {
       />
       <meta property="og:title" content={meta.title} />
       <meta property="og:description" content={meta.description} />
-      <meta property="og:image" content={defaultMeta.thumbnail} />
+      <meta property="og:image" content={SEO_META_FALLBACK.thumbnail} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -66,7 +63,7 @@ export const Seo: FC<ISeo> = ({ title, description }) => {
       />
       <meta property="twitter:title" content={meta.title} />
       <meta property="twitter:description" content={meta.description} />
-      <meta property="twitter:image" content={defaultMeta.thumbnail} />
+      <meta property="twitter:image" content={SEO_META_FALLBACK.thumbnail} />
     </Head>
   );
 };
