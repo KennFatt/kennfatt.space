@@ -2,19 +2,23 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
   render() {
-    const umamiScriptSrc = process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL;
-    const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
-    const umamiAnalytic =
-      typeof umamiScriptSrc === "string" && umamiScriptSrc.length > 0 ? (
-        <script
-          async
-          defer
-          src={umamiScriptSrc}
-          data-website-id={umamiWebsiteId}
-          data-do-not-track="true"
-          data-cache="true"
-        ></script>
-      ) : null;
+    /** Only use analytic on production env. */
+    let umamiAnalytic: JSX.Element | null = null;
+    if (process.env.NODE_ENV !== "development") {
+      const umamiScriptSrc = process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL;
+      const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
+      umamiAnalytic =
+        typeof umamiScriptSrc === "string" && umamiScriptSrc.length > 0 ? (
+          <script
+            async
+            defer
+            src={umamiScriptSrc}
+            data-website-id={umamiWebsiteId}
+            data-do-not-track="true"
+            data-cache="true"
+          ></script>
+        ) : null;
+    }
 
     return (
       <Html lang="en">
@@ -43,11 +47,12 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/seo/site.webmanifest" />
           <meta name="theme-color" content="#678349" />
 
-          {umamiAnalytic}
           <meta
             name="google-site-verification"
             content="9mAMHbAn41ReTzc_4YZVdwEs1gv6RBr_ndSK6Qm6pLs"
           />
+
+          {umamiAnalytic}
         </Head>
 
         <body className="document-base">
