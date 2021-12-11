@@ -21,7 +21,7 @@ export const CollaborationCta: FC<ICollaborationCta> = () => {
   }, []);
 
   return (
-    <Section>
+    <Section hasVerticalPadding centerContent>
       <div className="bg-base-dim md:px-14 rounded-xl md:py-12 px-7 py-6">
         <h3 className="md:text-3xl font-serif text-2xl">
           I&#39;m open to help and am available for freelance opportunities and
