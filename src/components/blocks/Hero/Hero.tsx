@@ -10,14 +10,13 @@ import styles from "./Hero.module.scss";
 export interface IHero {}
 
 /**
- * Component Hero is supposed to be placed in the top. It has minimum height of
- *  100vh minus top header's height.
+ * Component Hero is supposed to be placed in the top of a page.
  */
 export const Hero: FC<IHero> = () => {
   return (
     <Section
-      className="lg:text-6xl lg:leading-relaxed flex items-center text-3xl leading-relaxed min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-7.75rem)]"
-      space={false}
+      className="lg:text-6xl lg:leading-relaxed flex items-center text-3xl leading-relaxed"
+      isOnTop
     >
       <h1 className="font-serif">
         <span className={styles.highlighted}>Kennan Fattahillah</span> is a{" "}

@@ -6,8 +6,14 @@ import clsx from "clsx";
  * Component Section's props.
  */
 export interface ISection extends HTMLAttributes<HTMLElement> {
+  /** Adding vertical space (py) inside the section */
   space?: boolean;
+
+  /** Keep its children in the center of the page. Not a fluid. */
   centerContent?: boolean;
+
+  /** Flag to set section's height == (100vh - top header's height) */
+  isOnTop?: boolean;
 }
 
 /**
@@ -23,12 +29,18 @@ export interface ISection extends HTMLAttributes<HTMLElement> {
 export const Section: FC<ISection> = ({
   space = true,
   centerContent = true,
+  isOnTop = false,
   children,
-  ...rest
+  ...props
 }) => {
+  const { className, ...rest } = props;
   const spaceClassName = clsx({
     "py-12": space,
+    "min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-7.75rem)]": isOnTop,
   });
+  const mergedClassName = spaceClassName.concat(
+    ...[className ? " " + className : ""]
+  );
 
   const content = centerContent ? (
     <CenterContent>{children}</CenterContent>
@@ -37,7 +49,7 @@ export const Section: FC<ISection> = ({
   );
 
   return (
-    <section className={spaceClassName} {...rest}>
+    <section className={mergedClassName} {...rest}>
       {content}
     </section>
   );
