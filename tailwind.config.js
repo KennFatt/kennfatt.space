@@ -1,9 +1,7 @@
 const theme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  mode: "jit",
-  purge: ["./src/{pages,components}/**/*.tsx"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./src/{pages,components}/**/*.tsx"],
   theme: {
     extend: {
       colors: {
@@ -20,9 +18,6 @@ module.exports = {
         "8xl": "1440px",
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
