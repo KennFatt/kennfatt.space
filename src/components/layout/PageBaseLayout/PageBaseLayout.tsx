@@ -1,9 +1,11 @@
-import type { FC } from "react";
+import { FC } from "react";
 
 import { Seo } from "components/utils/Seo";
 import { TopNav } from "components/blocks/TopNav";
 import { Footer } from "components/blocks/Footer";
 import { MobileSideNav } from "components/blocks/MobileSideNav";
+
+import { ComingSoonMessage } from "components/base/ComingSoonMessage";
 
 /**
  * Component PageBaseLayout's props.
@@ -29,7 +31,7 @@ export const PageBaseLayout: FC<IPageBaseLayout> = ({
       <MobileSideNav />
 
       <main className="min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-7.75rem)]">
-        {children}
+        {children || <ComingSoonMessage />}
       </main>
 
       <Footer />

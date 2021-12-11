@@ -45,7 +45,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
 
   return (
     <div
-      className="bg-primary-dark/25 fixed inset-0"
+      className="bg-primary-dark/25 fixed inset-0 z-50"
       onClickCapture={offcanvasClicked}
     >
       <nav className="bg-base-light absolute top-0 right-0 w-full h-screen max-w-xs px-6">
