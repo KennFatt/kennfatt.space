@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           />
 
-          <link rel="icon" href="/static/seo/favicon.ico" sizes="any" />
+          <link rel="icon" href="/favicon.ico" sizes="any" />
           <link
             rel="apple-touch-icon"
             href="/static/seo/apple-touch-icon.png"
@@ -44,6 +44,10 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#678349" />
 
           {umamiAnalytic}
+          <meta
+            name="google-site-verification"
+            content="9mAMHbAn41ReTzc_4YZVdwEs1gv6RBr_ndSK6Qm6pLs"
+          />
         </Head>
 
         <body className="document-base">
