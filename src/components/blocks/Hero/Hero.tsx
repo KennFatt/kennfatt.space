@@ -16,6 +16,8 @@ export const Hero: FC<IHero> = () => {
   return (
     <Section
       className="lg:text-6xl lg:leading-relaxed flex items-center text-3xl leading-relaxed"
+      hasVerticalPadding
+      centerContent
       isOnTop
     >
       <h1 className="font-serif">
