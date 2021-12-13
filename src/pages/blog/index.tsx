@@ -1,8 +1,10 @@
-import type { NextPage } from "next";
+import type { NextPageWithLayout } from "lib/common-types";
 import { PageBaseLayout } from "components/layout/PageBaseLayout";
 
-const BlogIndexPage: NextPage = () => {
-  return <PageBaseLayout pageName="Blog" />;
+const BlogIndexPage: NextPageWithLayout = () => {
+  return <></>;
 };
+
+BlogIndexPage.getLayout = (_) => <PageBaseLayout pageName="Blog" />;
 
 export default BlogIndexPage;

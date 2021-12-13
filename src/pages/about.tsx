@@ -1,8 +1,10 @@
-import type { NextPage } from "next";
+import type { NextPageWithLayout } from "lib/common-types";
 import { PageBaseLayout } from "components/layout/PageBaseLayout";
 
-const AboutPage: NextPage = () => {
-  return <PageBaseLayout pageName="About" />;
+const AboutPage: NextPageWithLayout = () => {
+  return <></>;
 };
+
+AboutPage.getLayout = (_) => <PageBaseLayout pageName="About" />;
 
 export default AboutPage;
