@@ -32,3 +32,8 @@
       url("/fonts/body/redhatdisplay-600.ttf") format("truetype");
   }
 }
+
+p {
+  /** TODO|NOTE: Redhat Display is little bit hard to read IMO. */
+  @apply tracking-wider;
+}
