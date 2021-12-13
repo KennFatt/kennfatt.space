@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import { IsomorphicImage } from "components/utils/IsomorphicImage";
 
 /**

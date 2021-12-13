@@ -29,6 +29,7 @@
     "zustand": "^3.6.7"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.1.1",
     "@types/nprogress": "^0.2.0",
     "@types/react": "17.0.37",
     "clsx": "^1.1.1",

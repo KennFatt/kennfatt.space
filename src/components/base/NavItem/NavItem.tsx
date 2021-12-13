@@ -1,6 +1,6 @@
-import type { FC } from "react";
-import Link from "next/link";
 import clsx from "clsx";
+import Link from "next/link";
+import type { FC } from "react";
 
 /**
  * Component NavItem's props.

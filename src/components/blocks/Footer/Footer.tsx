@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import { memo } from "react";
+
 import { CenterContent } from "components/base/CenterContent";
 import { ContactIconLinksGroup } from "components/base/ContactIconLinksGroup";
 

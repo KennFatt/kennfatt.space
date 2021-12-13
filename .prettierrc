@@ -3,5 +3,8 @@
   "jsxBracketSameLine": true,
   "proseWrap": "never",
   "embeddedLanguageFormatting": "off",
-  "tabWidth": 2
+  "tabWidth": 2,
+  "importOrder": ["^components/(.*)$", "^lib/(.*)$", "^stores/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

@@ -1,6 +1,6 @@
-import type { FC, HTMLAttributes } from "react";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
+import type { FC, HTMLAttributes } from "react";
 
 type ImageOverrideProps = HTMLAttributes<HTMLImageElement> & ImageProps;
 

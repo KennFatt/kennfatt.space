@@ -1,9 +1,10 @@
 import clsx from "clsx";
-import { TOP_LEVEL_NAV } from "lib/consts";
 import { useRouter } from "next/router";
 import type { FC } from "react";
 
 import { NavItem } from "components/base/NavItem";
+
+import { TOP_LEVEL_NAV } from "lib/consts";
 
 /**
  * Component NavItemsGroup's props.

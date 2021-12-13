@@ -1,16 +1,20 @@
-import type { NextPage } from "next";
-
-import { PageBaseLayout } from "components/layout/PageBaseLayout";
-import { Hero } from "components/blocks/Hero";
 import { CollaborationCta } from "components/blocks/CollaborationCta";
+import { Hero } from "components/blocks/Hero";
+import { PageBaseLayout } from "components/layout/PageBaseLayout";
 
-const Home: NextPage = () => {
+import type { NextPageWithLayout } from "lib/common-types";
+
+const Home: NextPageWithLayout = () => {
   return (
-    <PageBaseLayout>
+    <>
       <Hero />
       <CollaborationCta />
-    </PageBaseLayout>
+    </>
   );
+};
+
+Home.getLayout = (page) => {
+  return <PageBaseLayout>{page}</PageBaseLayout>;
 };
 
 export default Home;

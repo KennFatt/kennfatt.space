@@ -1,11 +1,10 @@
-import { FC } from "react";
-
-import { Seo } from "components/utils/Seo";
-import { TopNav } from "components/blocks/TopNav";
-import { Footer } from "components/blocks/Footer";
-import { MobileSideNav } from "components/blocks/MobileSideNav";
+import type { FC } from "react";
 
 import { ComingSoonMessage } from "components/base/ComingSoonMessage";
+import { Footer } from "components/blocks/Footer";
+import { MobileSideNav } from "components/blocks/MobileSideNav";
+import { TopNav } from "components/blocks/TopNav";
+import { Seo } from "components/utils/Seo";
 
 /**
  * Component PageBaseLayout's props.

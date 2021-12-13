@@ -1,12 +1,11 @@
+import type { FC, SyntheticEvent } from "react";
 import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
-import type { FC } from "react";
-import type { SyntheticEvent } from "react";
 
-import { NavItemsGroup } from "components/base/NavItemsGroup";
 import { ContactIconLinksGroup } from "components/base/ContactIconLinksGroup";
+import { NavItemsGroup } from "components/base/NavItemsGroup";
 
-import { useSideNavStore, toggleSideNav } from "stores/sidenav-store";
+import { toggleSideNav, useSideNavStore } from "stores/sidenav-store";
 
 /**
  * Component MobileSideNav's props.

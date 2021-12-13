@@ -1,17 +1,23 @@
-import type { AppProps } from "next/app";
 import { Router } from "next/router";
 import NProgress from "nprogress";
-import { Seo } from "components/utils/Seo";
+import "styles/custom-nprogress.scss";
+import "styles/globals.scss";
+
+import type { AppPropsWithLayout } from "lib/common-types";
 
 /** NProgress bootstrap */
 Router.events.on("routeChangeStart", NProgress.start);
 Router.events.on("routeChangeError", NProgress.done);
 Router.events.on("routeChangeComplete", NProgress.done);
 
-import "styles/globals.scss";
-import "styles/custom-nprogress.scss";
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+  /**
+   * Impl Layout component across pages.
+   * @see https://nextjs.org/docs/basic-features/layouts
+   */
+  const getLayout = Component.getLayout || ((page) => page);
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+  return getLayout(<Component {...pageProps} />);
+};
+
 export default MyApp;

@@ -1,7 +1,8 @@
 import type { FC } from "react";
 
-import { ContactIconLink } from "../ContactIconLink";
 import { CONTACT_LIST } from "lib/consts";
+
+import { ContactIconLink } from "../ContactIconLink";
 
 /**
  * Component ContactIconLinksGroup's props.

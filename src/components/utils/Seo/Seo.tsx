@@ -1,6 +1,6 @@
-import type { FC } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import type { FC } from "react";
 
 import { SEO_META_FALLBACK } from "lib/consts";
 

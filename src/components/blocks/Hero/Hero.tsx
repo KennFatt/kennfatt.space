@@ -1,7 +1,6 @@
 import type { FC } from "react";
 
 import { Section } from "../Section";
-
 import styles from "./Hero.module.scss";
 
 /**
