@@ -20,7 +20,7 @@ export interface ITopNav {}
  */
 export const TopNav: FC<ITopNav> = () => {
   return (
-    <header>
+    <header className="bg-base-light sticky top-0 shadow-sm">
       <CenterContent py="m">
         <nav className="flex items-center justify-between">
           {/* LHS */}
