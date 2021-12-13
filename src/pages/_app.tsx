@@ -1,9 +1,9 @@
 import { Router } from "next/router";
-import type { AppPropsWithLayout } from "lib/common-types";
 import NProgress from "nprogress";
-
-import "styles/globals.scss";
 import "styles/custom-nprogress.scss";
+import "styles/globals.scss";
+
+import type { AppPropsWithLayout } from "lib/common-types";
 
 /** NProgress bootstrap */
 Router.events.on("routeChangeStart", NProgress.start);

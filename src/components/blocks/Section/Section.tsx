@@ -1,6 +1,7 @@
-import type { FC, HTMLAttributes } from "react";
-import { CenterContent } from "components/base/CenterContent";
 import clsx from "clsx";
+import type { FC, HTMLAttributes } from "react";
+
+import { CenterContent } from "components/base/CenterContent";
 
 /**
  * Component Section's props.
@@ -34,11 +35,11 @@ export const Section: FC<ISection> = ({
   ...props
 }) => {
   const { className, ...rest } = props;
-  const dynamicClassName = clsx({
+  const dynamicPropClass = clsx({
     "py-12": hasVerticalPadding,
     "min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-7.75rem)]": isOnTop,
   });
-  const mergedClassName = dynamicClassName.concat(
+  const mergedClassName = dynamicPropClass.concat(
     ...[className ? " " + className : ""]
   );
 
