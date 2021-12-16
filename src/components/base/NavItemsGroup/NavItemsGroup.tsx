@@ -52,7 +52,7 @@ export const NavItemsGroup: FC<INavItemsGroup> = ({
 
   return (
     <ul
-      className={`flex font-serif text-2xl font-medium ${directionClass} ${spaceClass}`}
+      className={`flex font-serif text-xl lg:text-2xl font-medium ${directionClass} ${spaceClass}`}
     >
       {TOP_LEVEL_NAV.map((pathName, idx) => (
         <NavItem

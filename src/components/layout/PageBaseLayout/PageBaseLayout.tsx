@@ -29,7 +29,7 @@ export const PageBaseLayout: FC<IPageBaseLayout> = ({
       <TopNav />
       <MobileSideNav />
 
-      <main className="min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-7.75rem)]">
+      <main className="topnav-offset-vh">
         {children || <ComingSoonMessage />}
       </main>
 

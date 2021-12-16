@@ -37,7 +37,7 @@ export const Section: FC<ISection> = ({
   const { className, ...rest } = props;
   const dynamicPropClass = clsx({
     "py-12": hasVerticalPadding,
-    "min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-7.75rem)]": isOnTop,
+    "topnav-offset-vh": isOnTop,
   });
   const mergedClassName = dynamicPropClass.concat(
     ...[className ? " " + className : ""]
