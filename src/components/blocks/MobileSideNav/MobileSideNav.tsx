@@ -50,7 +50,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
       <nav className="bg-base-light absolute top-0 right-0 w-full h-screen max-w-xs px-6">
         {/* Toggle off side nav */}
         {/* The `min-h-[]` class name is measured by calculating top nav header's height. */}
-        <div className="flex items-center justify-end min-h-[5rem] md:min-h-[7.75rem]">
+        <div className="topnav-offset-h flex items-center justify-end">
           <button onClick={toggleSideNav} className="outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"

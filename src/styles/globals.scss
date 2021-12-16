@@ -16,3 +16,16 @@
     @apply outline-none focus:ring-2 focus:ring-primary-light rounded-sm;
   }
 }
+
+/**
+ * Whenever you change the height of top level navigation and header (or its content),
+ *  you need to recalculate this two classes manually.
+ *
+ * It's kinda pain, but it is what it is.
+ */
+.topnav-offset-h {
+  @apply min-h-[3.5rem] md:min-h-[4rem];
+}
+.topnav-offset-vh {
+  @apply min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-4rem)];
+}
