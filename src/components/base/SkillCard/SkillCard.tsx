@@ -1,7 +1,8 @@
 import clsx from "clsx";
-import type { CSSProperties, FC, ReactNode } from "react";
+import type { CSSProperties, FC } from "react";
 
 import { IsomorphicImage } from "components/utils/IsomorphicImage";
+import { MarkdownPlain } from "components/utils/MarkdownPlain";
 
 /**
  * Component SkillCard's props.
@@ -17,7 +18,7 @@ export interface ISkillCard {
   circleBackgroundColor?: string;
 
   /** Only accept text node as its children */
-  children?: string | ReactNode[];
+  children?: string;
 }
 
 /**
@@ -64,7 +65,10 @@ export const SkillCard: FC<ISkillCard> = ({
       <span className="my-6 text-xl font-medium">{name}</span>
 
       {/* Description */}
-      <p className="max-w-xs text-center">{children}</p>
+      <MarkdownPlain
+        children={children as string}
+        className="max-w-xs text-center"
+      />
     </div>
   );
 };

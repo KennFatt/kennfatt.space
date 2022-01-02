@@ -1,0 +1,9 @@
+// TODO: somehow move this markdown related classes into global level and make it reusable for another wrappper.
+.markdown-wrapper {
+  a {
+    @apply transition-colors duration-300;
+    &:hover {
+      @apply text-primary-light;
+    }
+  }
+}
