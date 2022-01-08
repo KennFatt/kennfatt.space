@@ -8,7 +8,7 @@ import type { ReactElement, ReactNode } from "react";
  *
  * @see https://nextjs.org/docs/basic-features/layouts
  */
-export type NextPageWithLayout<T> = NextPage<T> & {
+export type NextPageWithLayout<T = {}, IP = {}> = NextPage<T, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
 
