@@ -1,6 +1,6 @@
-import { PageBaseLayout } from "components/layout/PageBaseLayout";
+import type { NextPageWithLayout } from "types/custom-next-page.type";
 
-import type { NextPageWithLayout } from "lib/common-types";
+import { PageBaseLayout } from "components/layout/PageBaseLayout";
 
 const ProjectsIndexPage: NextPageWithLayout = () => {
   return <></>;
