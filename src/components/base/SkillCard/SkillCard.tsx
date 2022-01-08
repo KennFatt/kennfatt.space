@@ -65,10 +65,9 @@ export const SkillCard: FC<ISkillCard> = ({
       <span className="my-6 text-xl font-medium">{name}</span>
 
       {/* Description */}
-      <MarkdownPlain
-        children={children as string}
-        className="max-w-xs text-center"
-      />
+      <MarkdownPlain className="max-w-xs text-center">
+        {children as string}
+      </MarkdownPlain>
     </div>
   );
 };

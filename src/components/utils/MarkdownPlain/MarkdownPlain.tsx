@@ -22,5 +22,7 @@ export const MarkdownPlain: FC<IMarkdownPlain> = ({
 }) => {
   const markdownWrapperClass = clsx(styles["markdown-wrapper"], _className);
 
-  return <ReactMarkdown children={children} className={markdownWrapperClass} />;
+  return (
+    <ReactMarkdown className={markdownWrapperClass}>{children}</ReactMarkdown>
+  );
 };
