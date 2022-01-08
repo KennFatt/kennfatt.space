@@ -1,5 +1,7 @@
+import cn from "clsx";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
+import { useState } from "react";
 import type { FC, HTMLAttributes } from "react";
 
 type ImageOverrideProps = HTMLAttributes<HTMLImageElement> & ImageProps;
@@ -33,9 +35,27 @@ export const IsomorphicImage: FC<IIsomorphicImage> = ({
   srcFallback,
   ...props
 }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  /**
+   * The easiest way to achive "blur" effect from external image source.
+   *
+   * @see https://github.com/vercel/next.js/discussions/26168#discussioncomment-1863742
+   */
+  const blurImgClass = cn(
+    props.className,
+    "duration-700 ease-in-out",
+    isLoading ? "grayscale blur-2xl scale-110" : "grayscale-0 blur-0 scale-100"
+  );
+
   return process.env.NODE_ENV === "development" && !forceOptimize ? (
     <img src={srcFallback || src} {...props} />
   ) : (
-    <Image src={src} {...props} />
+    <Image
+      src={srcFallback || src}
+      {...props}
+      className={blurImgClass}
+      onLoadingComplete={() => setIsLoading(false)}
+    />
   );
 };
