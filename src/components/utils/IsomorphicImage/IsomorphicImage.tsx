@@ -38,6 +38,16 @@ export const IsomorphicImage: FC<IIsomorphicImage> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(true);
 
+  const imgProps = {
+    ...props,
+    src: srcFallback || src,
+  };
+
+  /** Under development mode */
+  if (process.env.NODE_ENV === "development" && !forceOptimize) {
+    return <img {...imgProps} />;
+  }
+
   /**
    * The easiest way to achive "blur" effect from external image source.
    *
@@ -49,14 +59,10 @@ export const IsomorphicImage: FC<IIsomorphicImage> = ({
     isLoading ? "grayscale blur-2xl scale-110" : "grayscale-0 blur-0 scale-100"
   );
 
-  return process.env.NODE_ENV === "development" && !forceOptimize ? (
-    <img src={srcFallback || src} {...props} />
-  ) : (
-    <Image
-      src={srcFallback || src}
-      {...props}
-      className={blurImgClass}
-      onLoadingComplete={() => setIsLoading(false)}
-    />
-  );
+  if (srcFallback) {
+    imgProps.className += blurImgClass;
+    imgProps.onLoadingComplete = () => setIsLoading(false);
+  }
+
+  return <Image {...imgProps} />;
 };
