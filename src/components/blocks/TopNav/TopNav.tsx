@@ -4,7 +4,7 @@ import type { FC } from "react";
 import { CenterContent } from "components/base/CenterContent";
 import { NavItemsGroup } from "components/base/NavItemsGroup";
 
-import { toggleSideNav } from "stores/sidenav-store";
+import { toggleSideNav } from "stores/sidenav.store";
 
 /**
  * Component TopNav's props.
