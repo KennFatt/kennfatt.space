@@ -1,13 +1,14 @@
 import { AllSkillCards } from "graphql/model/AllSkillCards";
 import { QUERY_ALL_SKILLCARDS } from "graphql/queries/skillcard.query";
 import { GetStaticProps } from "next";
-import type { NextPageWithLayout } from "types/custom-next-page.type";
 
 import { CollaborationCta } from "components/blocks/CollaborationCta";
 import { Hero } from "components/blocks/Hero";
 import { HowICanHelp } from "components/blocks/HowICanHelp";
 import { IHowICanHelp } from "components/blocks/HowICanHelp";
 import { PageBaseLayout } from "components/layout/PageBaseLayout";
+
+import type { NextPageWithLayout } from "types/custom-next-page.type";
 
 import { apolloClient } from "lib/apollo.client";
 

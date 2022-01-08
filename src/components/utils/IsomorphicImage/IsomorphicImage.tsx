@@ -1,8 +1,9 @@
-import cn from "clsx";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
 import { useState } from "react";
 import type { FC, HTMLAttributes } from "react";
+
+import cn from "clsx";
 
 type ImageOverrideProps = HTMLAttributes<HTMLImageElement> & ImageProps;
 

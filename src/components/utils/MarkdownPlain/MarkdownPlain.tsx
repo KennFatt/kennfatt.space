@@ -1,8 +1,9 @@
-import clsx from "clsx";
 import type { FC } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 import styles from "./MarkdownPlain.module.scss";
+
+import clsx from "clsx";
 
 /**
  * Component MarkdownPlain's props.

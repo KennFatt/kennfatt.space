@@ -1,8 +1,9 @@
-import clsx from "clsx";
 import type { CSSProperties, FC } from "react";
 
 import { IsomorphicImage } from "components/utils/IsomorphicImage";
 import { MarkdownPlain } from "components/utils/MarkdownPlain";
+
+import clsx from "clsx";
 
 /**
  * Component SkillCard's props.

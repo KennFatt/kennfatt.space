@@ -4,7 +4,17 @@
   "proseWrap": "never",
   "embeddedLanguageFormatting": "off",
   "tabWidth": 2,
-  "importOrder": ["^components/(.*)$", "^lib/(.*)$", "^stores/(.*)$", "^[./]"],
+  "importOrder": [
+    "^components/(.*)$",
+    "^types/(.*)$",
+    "^lib/(.*)$",
+    "^stores/(.*)$",
+    "^queries/(.*)$",
+    "^generated/(.*)$",
+    "^styles/(.*)$",
+    "^[./]",
+    "^[./(.scss|.css)]"
+  ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }
