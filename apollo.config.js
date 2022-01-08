@@ -8,8 +8,8 @@ module.exports = {
       headers: {
         authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
       },
-      includes: ["./src/**/*.{ts,tsx,graphql,gql}"],
-      excludes: ["./src/generated/**/*"],
+      includes: ["./src/graphql/**/*.{ts,graphql,gql}"],
+      excludes: ["./src/graphql/model/**/*"],
     },
   },
 };
