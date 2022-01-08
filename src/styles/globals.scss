@@ -8,7 +8,7 @@
 @layer components {
   /** Applied for <Document> level component. */
   .document-base {
-    @apply bg-base-light text-primary-dark selection:bg-primary-light selection:text-base-light text-lg tracking-wide;
+    @apply bg-base-light text-primary-dark selection:bg-primary-light selection:text-base-light tracking-wide;
   }
 
   /** Primarily used to replace tabindex's outline */

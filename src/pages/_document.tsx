@@ -7,6 +7,7 @@ export default class MyDocument extends Document {
     if (process.env.NODE_ENV !== "development") {
       const umamiScriptSrc = process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL;
       const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
+      const umamiDomains = process.env.NEXT_PUBLIC_UMAMI_DOMAINS;
       umamiAnalytic =
         typeof umamiScriptSrc === "string" && umamiScriptSrc.length > 0 ? (
           <script
@@ -16,6 +17,7 @@ export default class MyDocument extends Document {
             data-website-id={umamiWebsiteId}
             data-do-not-track="true"
             data-cache="true"
+            data-domains={umamiDomains}
           ></script>
         ) : null;
     }

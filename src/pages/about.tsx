@@ -1,6 +1,6 @@
 import { PageBaseLayout } from "components/layout/PageBaseLayout";
 
-import type { NextPageWithLayout } from "lib/common-types";
+import type { NextPageWithLayout } from "types/custom-next-page.type";
 
 const AboutPage: NextPageWithLayout = () => {
   return <></>;

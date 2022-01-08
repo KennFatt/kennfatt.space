@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import React from "react";
 
 import { Section } from "components/blocks/Section";
 import { IsomorphicImage } from "components/utils/IsomorphicImage";
@@ -13,7 +13,7 @@ export interface IComingSoonMessage {}
 /**
  * Component ComingSoonMessage is used to be a "placeholder" for the page that currently has no content in it.
  */
-export const ComingSoonMessage: FC<IComingSoonMessage> = () => {
+export const ComingSoonMessage = React.memo(() => {
   return (
     <Section className="flex flex-col justify-center" centerContent isOnTop>
       <div className="flex flex-col items-center justify-center">
@@ -27,7 +27,6 @@ export const ComingSoonMessage: FC<IComingSoonMessage> = () => {
           />
           <IsomorphicImage
             src={palmTree}
-            srcFallback="/static/images/palm-tree.png"
             quality={10}
             layout="fill"
             placeholder="blur"
@@ -43,4 +42,5 @@ export const ComingSoonMessage: FC<IComingSoonMessage> = () => {
       </div>
     </Section>
   );
-};
+});
+ComingSoonMessage.displayName = "ComingSoonMessage";

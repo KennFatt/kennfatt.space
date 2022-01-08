@@ -1,9 +1,10 @@
 import { Router } from "next/router";
 import NProgress from "nprogress";
+
+import type { AppPropsWithLayout } from "types/custom-next-page.type";
+
 import "styles/custom-nprogress.scss";
 import "styles/globals.scss";
-
-import type { AppPropsWithLayout } from "lib/common-types";
 
 /** NProgress bootstrap */
 Router.events.on("routeChangeStart", NProgress.start);

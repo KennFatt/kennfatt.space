@@ -1,7 +1,8 @@
-import clsx from "clsx";
 import type { FC, HTMLAttributes } from "react";
 
 import { CenterContent } from "components/base/CenterContent";
+
+import clsx from "clsx";
 
 /**
  * Component Section's props.

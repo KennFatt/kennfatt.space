@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import { ContactIconLinksGroup } from "components/base/ContactIconLinksGroup";
 import { NavItemsGroup } from "components/base/NavItemsGroup";
 
-import { toggleSideNav, useSideNavStore } from "stores/sidenav-store";
+import { toggleSideNav, useSideNavStore } from "stores/sidenav.store";
 
 /**
  * Component MobileSideNav's props.
