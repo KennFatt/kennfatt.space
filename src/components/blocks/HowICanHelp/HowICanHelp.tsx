@@ -34,14 +34,17 @@ export const HowICanHelp: FC<IHowICanHelp> = ({ skillCards }) => {
     <Section id="how-i-can-help" centerContent hasVerticalPadding>
       <SectionHead title="How i can help" />
 
-      <div
-        className={`snap-x flex w-full space-x-20 overflow-x-auto px-[50vw] md:px-0 ${styles["hide-scrollbar"]}`}
-      >
-        {skillCards?.map(({ id, description, ...skilCardProps }) => (
-          <div key={id} className="snap-center">
-            <SkillCard {...skilCardProps}>{description}</SkillCard>
-          </div>
-        ))}
+      <div className="overflow-hidden">
+        {/* Snap container */}
+        <div
+          className={`snap-x flex space-x-20 px-[25vw] md:px-0 overflow-x-auto ${styles["hide-scrollbar"]}`}
+        >
+          {skillCards?.map(({ id, description, ...skilCardProps }) => (
+            <div key={id} className="snap-center">
+              <SkillCard {...skilCardProps}>{description}</SkillCard>
+            </div>
+          ))}
+        </div>
       </div>
     </Section>
   );
