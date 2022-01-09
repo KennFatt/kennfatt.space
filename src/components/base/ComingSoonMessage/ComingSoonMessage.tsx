@@ -27,6 +27,7 @@ export const ComingSoonMessage = React.memo(() => {
           />
           <IsomorphicImage
             src={palmTree}
+            srcFallback="/static/images/palm-tree.png"
             quality={10}
             layout="fill"
             placeholder="blur"
