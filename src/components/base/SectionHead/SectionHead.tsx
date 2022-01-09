@@ -30,17 +30,18 @@ export const SectionHead: FC<ISectionHead> = ({
   description,
   positionAlignment = "middle",
 }) => {
-  const positionAlignmentClass = clsx({
-    "items-start text-left": positionAlignment === "left",
-    "items-center text-center": positionAlignment === "middle",
-    "items-end text-right": positionAlignment === "right",
-  });
+  const positionAlignmentClass = clsx(
+    {
+      "items-start text-left": positionAlignment === "left",
+      "items-center text-center": positionAlignment === "middle",
+      "items-end text-right": positionAlignment === "right",
+    },
+    "flex flex-col justify-center w-full mb-12 space-y-6"
+  );
 
   return (
-    <div
-      className={`flex flex-col justify-center w-full mb-12 space-y-6 ${positionAlignmentClass}`}
-    >
-      <h2 className="md:text-5xl font-serif text-4xl">{title}</h2>
+    <div className={positionAlignmentClass}>
+      <h2 className="md:text-5xl font-serif text-3xl">{title}</h2>
 
       {description && <p className="max-w-4xl">{description}</p>}
 

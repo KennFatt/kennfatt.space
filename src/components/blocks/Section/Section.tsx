@@ -33,15 +33,15 @@ export const Section: FC<ISection> = ({
   centerContent = false,
   isOnTop = false,
   children,
+  className,
   ...props
 }) => {
-  const { className, ...rest } = props;
-  const dynamicPropClass = clsx({
-    "py-12": hasVerticalPadding,
-    "topnav-offset-vh": isOnTop,
-  });
-  const mergedClassName = dynamicPropClass.concat(
-    ...[className ? " " + className : ""]
+  const sectionClass = clsx(
+    {
+      "py-12": hasVerticalPadding,
+      "topnav-offset-vh": isOnTop,
+    },
+    className
   );
 
   const content = centerContent ? (
@@ -51,7 +51,7 @@ export const Section: FC<ISection> = ({
   );
 
   return (
-    <section className={mergedClassName} {...rest}>
+    <section className={sectionClass} {...props}>
       {content}
     </section>
   );

@@ -37,21 +37,19 @@ export const SkillCard: FC<ISkillCard> = ({
   circleBackgroundColor,
   children,
 }) => {
-  const imageBackgroundColorStyle: CSSProperties = circleBackgroundColor
-    ? {
-        backgroundColor: circleBackgroundColor,
-      }
-    : {};
-  const imageContainerClass = clsx({
-    "bg-neutral-200": !circleBackgroundColor,
-  });
+  const imageBackgroundColorStyle: CSSProperties = {
+    backgroundColor: circleBackgroundColor,
+  };
+  const imageContainerClass = clsx(
+    {
+      "bg-neutral-200": !circleBackgroundColor,
+    },
+    "w-48 h-48 rounded-full"
+  );
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div
-        className={`w-48 h-48 rounded-full ${imageContainerClass}`}
-        style={imageBackgroundColorStyle}
-      >
+      <div className={imageContainerClass} style={imageBackgroundColorStyle}>
         <IsomorphicImage
           src={imageSrc}
           srcFallback={imageSrc}

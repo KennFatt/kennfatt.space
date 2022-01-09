@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 
 import { Section } from "components/blocks/Section";
 import { IsomorphicImage } from "components/utils/IsomorphicImage";
@@ -13,7 +13,7 @@ export interface IComingSoonMessage {}
 /**
  * Component ComingSoonMessage is used to be a "placeholder" for the page that currently has no content in it.
  */
-export const ComingSoonMessage = React.memo(() => {
+export const ComingSoonMessage = memo(() => {
   return (
     <Section className="flex flex-col justify-center" centerContent isOnTop>
       <div className="flex flex-col items-center justify-center">
@@ -27,6 +27,7 @@ export const ComingSoonMessage = React.memo(() => {
           />
           <IsomorphicImage
             src={palmTree}
+            srcFallback="/static/images/palm-tree.png"
             quality={10}
             layout="fill"
             placeholder="blur"

@@ -20,7 +20,7 @@ export const Footer: FC<IFooter> = memo(() => {
 
         <div className="flex items-center justify-between">
           <p>
-            &copy; 2021 | Made with{" "}
+            &copy; {new Date().getFullYear()} | Made with{" "}
             <a
               href={`${process.env.NEXT_PUBLIC_CONTACT_GITHUB}/kennfatt.space`}
               target="_blank"

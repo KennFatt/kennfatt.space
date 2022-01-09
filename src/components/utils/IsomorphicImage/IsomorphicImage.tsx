@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import type { FC, HTMLAttributes } from "react";
 
-import cn from "clsx";
+import clsx from "clsx";
 
 type ImageOverrideProps = HTMLAttributes<HTMLImageElement> & ImageProps;
 
@@ -53,7 +53,7 @@ export const IsomorphicImage: FC<IIsomorphicImage> = ({
    *
    * @see https://github.com/vercel/next.js/discussions/26168#discussioncomment-1863742
    */
-  const blurImgClass = cn(
+  const blurImgClass = clsx(
     props.className,
     "duration-700 ease-in-out",
     isLoading ? "grayscale blur-2xl scale-110" : "grayscale-0 blur-0 scale-100"

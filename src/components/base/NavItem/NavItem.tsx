@@ -16,21 +16,19 @@ export interface INavItem {
  * It either in TopNav or OffcanvasNav (mobile).
  */
 export const NavItem: FC<INavItem> = ({ name, isActive }) => {
-  const aClass = clsx({
-    "text-primary-light": isActive,
-    "transition-colors duration-300 hover:text-primary-light": !isActive,
-  });
+  const aClass = clsx(
+    "w-full inline-block",
+    isActive
+      ? "text-primary-light"
+      : "transition-colors duration-300 hover:text-primary-light"
+  );
 
   const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
 
   return (
     <li className="w-full">
       <Link href={`/${name.toLowerCase()}`}>
-        <a
-          title={capitalizedName}
-          className={`custom-outline w-full inline-block ${aClass}`}
-          tabIndex={1}
-        >
+        <a title={capitalizedName} className={aClass} tabIndex={1}>
           {capitalizedName}
         </a>
       </Link>

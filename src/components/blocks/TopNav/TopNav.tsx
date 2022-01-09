@@ -6,6 +6,10 @@ import { NavItemsGroup } from "components/base/NavItemsGroup";
 
 import { toggleSideNav } from "stores/sidenav.store";
 
+import styles from "./TopNav.module.scss";
+
+import clsx from "clsx";
+
 /**
  * Component TopNav's props.
  */
@@ -19,8 +23,10 @@ export interface ITopNav {}
  *  And it should respect to my top level page in the sitemap.
  */
 export const TopNav: FC<ITopNav> = () => {
+  const headerClass = clsx("sticky top-0 z-40", styles["backdrop-blur"]);
+
   return (
-    <header className="bg-base-light sticky top-0 z-40 shadow-sm">
+    <header className={headerClass}>
       <CenterContent py="s">
         <nav className="flex items-center justify-between">
           {/* LHS */}
