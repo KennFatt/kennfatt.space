@@ -13,7 +13,6 @@
     "new:component-blocks": "plop component-blocks",
     "new:component-utils": "plop component-utils",
     "new:component-layout": "plop component-layout",
-    "apollo:generate-schema": "apollo client:download-schema schema.graphql",
     "apollo:codegen": "rm -rf src/graphql/model && apollo client:codegen --target typescript --outputFlat src/graphql/model"
   },
   "dependencies": {

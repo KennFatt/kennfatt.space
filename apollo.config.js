@@ -1,6 +1,7 @@
 require("dotenv").config({ path: "./.env.local" });
 
-module.exports = {
+/** @type {import("apollo").ApolloConfig} */
+const config = {
   client: {
     service: {
       name: "graphcms",
@@ -10,6 +11,9 @@ module.exports = {
       },
       includes: ["./src/graphql/**/*.{ts,graphql,gql}"],
       excludes: ["./src/graphql/model/**/*"],
+      skipSSLValidation: true,
     },
   },
 };
+
+module.exports = config;
