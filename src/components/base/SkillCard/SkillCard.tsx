@@ -3,6 +3,8 @@ import type { CSSProperties, FC } from "react";
 import { IsomorphicImage } from "components/utils/IsomorphicImage";
 import { MarkdownPlain } from "components/utils/MarkdownPlain";
 
+import { graphCmsImageLoader } from "lib/utils";
+
 import clsx from "clsx";
 
 /**
@@ -57,6 +59,7 @@ export const SkillCard: FC<ISkillCard> = ({
           className="w-full h-full pointer-events-none select-none"
           width={192}
           height={192}
+          loader={graphCmsImageLoader}
         />
       </div>
 

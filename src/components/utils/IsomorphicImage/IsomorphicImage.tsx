@@ -45,6 +45,16 @@ export const IsomorphicImage: FC<IIsomorphicImage> = ({
 
   /** Under development mode */
   if (process.env.NODE_ENV === "development" && !forceOptimize) {
+    /** Use the generated image URL when `src` props is an object (Next's optimized image data) */
+    if (typeof src === "object" && "src" in src) {
+      imgProps.src = src.src;
+    }
+
+    /** Strip `loader` props for HTML <img> element */
+    if ("loader" in imgProps) {
+      delete imgProps.loader;
+    }
+
     return <img {...imgProps} />;
   }
 
