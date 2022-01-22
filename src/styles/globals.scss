@@ -6,14 +6,9 @@
 @import "_typography.scss";
 
 @layer components {
-  /** Transition when an element changing its color (e.g. changing from light to dark color scheme and vice versa) */
-  .switch-color-transition {
-    @apply transition-colors duration-300;
-  }
-
   /** Applied for <Document> level component. */
   .document-base {
-    @apply bg-base-light text-primary-dark dark:text-base-text-dark selection:bg-primary-light selection:text-base-light tracking-wide dark:bg-base-dark;
+    @apply bg-base-light text-primary-dark selection:bg-primary-light selection:text-base-light tracking-wide;
   }
 }
 

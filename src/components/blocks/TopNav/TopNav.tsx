@@ -3,12 +3,9 @@ import type { FC } from "react";
 
 import { CenterContent } from "components/base/CenterContent";
 import { NavItemsGroup } from "components/base/NavItemsGroup";
+import { SwitchThemeButton } from "components/base/SwitchThemeButton";
 
 import { toggleSideNav } from "stores/sidenav.store";
-
-import styles from "./TopNav.module.scss";
-
-import clsx from "clsx";
 
 /**
  * Component TopNav's props.
@@ -23,13 +20,8 @@ export interface ITopNav {}
  *  And it should respect to my top level page in the sitemap.
  */
 export const TopNav: FC<ITopNav> = () => {
-  const headerClass = clsx(
-    "sticky top-0 z-40 switch-color-transition",
-    styles["backdrop-blur"]
-  );
-
   return (
-    <header className={headerClass}>
+    <header className="bg-base-light/80 border-base-light dark:bg-base-dark/80 dark:border-base-dark backdrop-blur-sm sticky top-0 z-40 border">
       <CenterContent py="s">
         <nav className="flex items-center justify-between">
           {/* LHS */}
@@ -43,8 +35,9 @@ export const TopNav: FC<ITopNav> = () => {
           </Link>
 
           {/* RHS: desktop */}
-          <div className="md:block hidden">
+          <div className="md:flex md:items-center md:space-x-6 hidden">
             <NavItemsGroup />
+            <SwitchThemeButton />
           </div>
 
           {/* RHS: mobile */}

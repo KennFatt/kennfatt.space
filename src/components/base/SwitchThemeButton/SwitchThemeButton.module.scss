@@ -1,0 +1,15 @@
+/** Component SwitchThemeButton's style. */
+.fade-in {
+  animation: fade-in-animation 300ms forwards;
+}
+
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

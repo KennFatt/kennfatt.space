@@ -23,7 +23,7 @@ export const CollaborationCta: FC<ICollaborationCta> = () => {
 
   return (
     <Section hasVerticalPadding centerContent>
-      <div className="bg-base-light-dim dark:bg-base-dark-dim switch-color-transition md:px-14 rounded-xl md:py-12 px-7 py-6">
+      <div className="bg-base-light-dim dark:bg-base-dark-dim md:px-14 rounded-xl md:py-12 px-7 py-6">
         <h3 className="md:text-3xl font-serif text-2xl">
           I&#39;m open to help and available for freelance opportunities and
           collaborations worldwide!

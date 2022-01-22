@@ -16,7 +16,7 @@ export const Footer: FC<IFooter> = memo(() => {
   return (
     <footer className="border-primary-dark dark:border-primary-light  md:text-base text-sm border-b-[20px]">
       <CenterContent py="l">
-        <hr className="border-base-light-dim dark:border-base-dark-dim switch-color-transition w-full mb-6 border rounded-full" />
+        <hr className="border-base-light-dim dark:border-base-dark-dim w-full mb-6 border rounded-full" />
 
         <div className="flex items-center justify-between">
           <p>
