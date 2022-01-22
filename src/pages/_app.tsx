@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes";
 import { Router } from "next/router";
 import NProgress from "nprogress";
 
@@ -18,7 +19,11 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
    */
   const getLayout = Component.getLayout || ((page) => page);
 
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <ThemeProvider attribute="class">
+      {getLayout(<Component {...pageProps} />)}
+    </ThemeProvider>
+  );
 };
 
 export default MyApp;

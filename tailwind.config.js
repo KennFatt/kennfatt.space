@@ -2,13 +2,17 @@ const theme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: ["./src/{pages,components}/**/*.tsx"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         "primary-light": "#678349",
         "primary-dark": "#1E2F24",
         "base-light": "#F9F9F8",
-        "base-dim": "#E4E4E4",
+        "base-light-dim": "#E4E4E4",
+        "base-dark": "#20201f",
+        "base-dark-dim": "#2f2f2f",
+        "base-text-dark": "#c8d2bd",
       },
       fontFamily: {
         sans: ["redhatdisplay", ...theme.fontFamily.sans],

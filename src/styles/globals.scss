@@ -12,6 +12,10 @@
   }
 }
 
+html {
+  scrollbar-color: rgb(103 131 73) rgb(0 0 0 / 0);
+}
+
 /**
  * Whenever you change the height of top level navigation and header (or its content),
  *  you need to recalculate this two classes manually.
