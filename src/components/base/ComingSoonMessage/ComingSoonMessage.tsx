@@ -3,7 +3,8 @@ import { memo } from "react";
 import { Section } from "components/blocks/Section";
 import { IsomorphicImage } from "components/utils/IsomorphicImage";
 
-import palmTree from "../../../../public/static/images/palm-tree.png";
+import palmTree from "assets/images/palm-tree.png";
+import BlobSvg from "assets/vectors/blob.svg";
 
 /**
  * Component ComingSoonMessage's props.
@@ -19,12 +20,8 @@ export const ComingSoonMessage = memo(() => {
       <div className="flex flex-col items-center justify-center">
         {/* Image */}
         <div className="h-72 md:h-80 w-72 md:w-80 relative flex items-center justify-center mb-12">
-          <IsomorphicImage
-            src="/static/vectors/blob.svg"
-            layout="fill"
-            className="pointer-events-none select-none"
-            alt="blob"
-          />
+          <BlobSvg />
+
           <IsomorphicImage
             src={palmTree}
             quality={10}

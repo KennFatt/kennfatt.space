@@ -1,5 +1,11 @@
 import type { IContactIconLink } from "components/base/ContactIconLink";
 
+import DribbleSvg from "assets/vectors/dribbble.svg";
+import GithubSvg from "assets/vectors/github.svg";
+import HackerRankSvg from "assets/vectors/hackerrank.svg";
+import LinkedInSvg from "assets/vectors/linkedin.svg";
+import TwitterSvg from "assets/vectors/twitter.svg";
+
 /**
  * Top (first) level navigation in the sitemap.
  * It should reflect to the actual pages that user can be navigated on.
@@ -16,27 +22,27 @@ export const CONTACT_LIST: IContactIconLink[] = [
   {
     title: "GitHub",
     href: process.env.NEXT_PUBLIC_CONTACT_GITHUB || "",
-    iconUrl: "/static/vectors/socials/github.svg",
+    iconComponent: GithubSvg,
   },
   {
     title: "HackerRank",
     href: process.env.NEXT_PUBLIC_CONTACT_HACKERRANK || "",
-    iconUrl: "/static/vectors/socials/hackerrank.svg",
+    iconComponent: HackerRankSvg,
   },
   {
     title: "Twitter",
     href: process.env.NEXT_PUBLIC_CONTACT_TWITTER || "",
-    iconUrl: "/static/vectors/socials/twitter.svg",
+    iconComponent: TwitterSvg,
   },
   {
     title: "Dribbble",
     href: process.env.NEXT_PUBLIC_CONTACT_DRIBBBLE || "",
-    iconUrl: "/static/vectors/socials/dribbble.svg",
+    iconComponent: DribbleSvg,
   },
   {
     title: "LinkedIn",
     href: process.env.NEXT_PUBLIC_CONTACT_LINKEDIN || "",
-    iconUrl: "/static/vectors/socials/linkedin.svg",
+    iconComponent: LinkedInSvg,
   },
 ];
 

@@ -1,6 +1,4 @@
-import type { FC } from "react";
-
-import { IsomorphicImage } from "components/utils/IsomorphicImage";
+import type { ElementType, FC, ReactNode } from "react";
 
 /**
  * Component ContactIconLink's props.
@@ -8,7 +6,9 @@ import { IsomorphicImage } from "components/utils/IsomorphicImage";
 export interface IContactIconLink {
   href: string;
   title: string;
-  iconUrl: string;
+
+  /** SVG or anything that represent react node. */
+  iconComponent?: ReactNode;
 }
 
 /**
@@ -17,8 +17,15 @@ export interface IContactIconLink {
 export const ContactIconLink: FC<IContactIconLink> = ({
   href,
   title,
-  iconUrl,
+  iconComponent,
 }) => {
+  /**
+   * It is necessary to cast as ElementType so TS would not complain.
+   *
+   * @see https://stackoverflow.com/a/60323737/6569706
+   */
+  const IconComponent = iconComponent as ElementType;
+
   return (
     <li>
       <a
@@ -29,13 +36,7 @@ export const ContactIconLink: FC<IContactIconLink> = ({
         tabIndex={-1}
         className="outline-none"
       >
-        <IsomorphicImage
-          src={iconUrl}
-          alt={title}
-          className="pointer-events-none select-none"
-          width={24}
-          height={24}
-        />
+        {iconComponent && <IconComponent />}
       </a>
     </li>
   );
