@@ -5,6 +5,6 @@
  * @see https://bugzilla.mozilla.org/show_bug.cgi?id=1578503
  */
 .backdrop-blur {
-  @apply bg-base-light/80 border border-base-light;
+  @apply bg-base-light/80 border border-base-light dark:bg-base-dark/80 dark:border-base-dark;
   backdrop-filter: blur(8px);
 }

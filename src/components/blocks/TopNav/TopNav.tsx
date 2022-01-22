@@ -23,7 +23,10 @@ export interface ITopNav {}
  *  And it should respect to my top level page in the sitemap.
  */
 export const TopNav: FC<ITopNav> = () => {
-  const headerClass = clsx("sticky top-0 z-40", styles["backdrop-blur"]);
+  const headerClass = clsx(
+    "sticky top-0 z-40 switch-color-transition",
+    styles["backdrop-blur"]
+  );
 
   return (
     <header className={headerClass}>

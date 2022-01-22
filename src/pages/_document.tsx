@@ -57,7 +57,7 @@ export default class MyDocument extends Document {
           {umamiAnalytic}
         </Head>
 
-        <body className="document-base">
+        <body className="document-base switch-color-transition">
           <Main />
           <NextScript />
         </body>

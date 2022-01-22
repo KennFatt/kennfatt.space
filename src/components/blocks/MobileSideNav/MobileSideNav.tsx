@@ -47,7 +47,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
       className="bg-primary-dark/25 fixed inset-0 z-50"
       onClickCapture={offcanvasClicked}
     >
-      <nav className="bg-base-light absolute top-0 right-0 flex flex-col justify-between w-full h-screen max-w-xs px-6">
+      <nav className="bg-base-light dark:bg-base-dark switch-color-transition absolute top-0 right-0 flex flex-col justify-between w-full h-screen max-w-xs px-6">
         <div>
           {/* Toggle off side nav */}
           <div className="topnav-offset-h flex items-center justify-end">
@@ -74,7 +74,7 @@ export const MobileSideNav: FC<IMobileSideNav> = () => {
         </div>
 
         <div className="pb-10">
-          <hr className="border-base-dim mb-6 border" />
+          <hr className="border-base-light-dim dark:border-base-dark-dim switch-color-transition mb-6 border" />
 
           {/* Contact */}
           <ul className="flex justify-between">
