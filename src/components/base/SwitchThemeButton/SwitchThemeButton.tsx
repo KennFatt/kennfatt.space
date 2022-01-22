@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import type { FC } from "react";
+import { FC, memo } from "react";
 
 import styles from "./SwitchThemeButton.module.scss";
 
@@ -13,7 +13,7 @@ export interface ISwitchThemeButton {}
 /**
  * Component SwitchThemeButton is a Button component to switch between dark and light theme.
  */
-export const SwitchThemeButton: FC<ISwitchThemeButton> = () => {
+export const SwitchThemeButton: FC<ISwitchThemeButton> = memo(() => {
   const { resolvedTheme, setTheme } = useTheme();
   const iconClass = clsx("w-6 h-6", styles["fade-in"]);
 
@@ -31,7 +31,8 @@ export const SwitchThemeButton: FC<ISwitchThemeButton> = () => {
       <ThemeIcon className={iconClass} />
     </button>
   );
-};
+});
+SwitchThemeButton.displayName = "SwitchThemeButton";
 
 const Sun: FC<{ className?: string }> = ({ className }) => {
   return (
