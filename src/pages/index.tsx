@@ -1,7 +1,6 @@
 import { AllSkillCards } from "graphql/model/AllSkillCards";
 import { QUERY_ALL_SKILLCARDS } from "graphql/queries/skillcard.query";
 import { GetStaticProps } from "next";
-import { useMemo } from "react";
 
 import { CollaborationCta } from "components/blocks/CollaborationCta";
 import { Hero } from "components/blocks/Hero";
@@ -28,8 +27,7 @@ const Home: NextPageWithLayout<IHome> = ({ howICanHelpSection }) => {
 };
 
 Home.getLayout = (page) => {
-  const memoizedPage = useMemo(() => page, []);
-  return <PageBaseLayout>{memoizedPage}</PageBaseLayout>;
+  return <PageBaseLayout>{page}</PageBaseLayout>;
 };
 
 export const getStaticProps: GetStaticProps<IHome> = async () => {
