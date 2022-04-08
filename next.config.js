@@ -7,7 +7,7 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   swcMinify: true,
-  images: { domains: ["media.graphcms.com"] },
+  images: { domains: ["media.graphassets.com"] },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -17,8 +17,6 @@ const nextConfig = {
     return config;
   },
 };
-
-// module.exports = withBundleAnalyzer(nextConfig);
 
 module.exports = withPlugins(
   [
