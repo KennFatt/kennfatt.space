@@ -8,18 +8,22 @@ export default class MyDocument extends Document {
       const umamiScriptSrc = process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL;
       const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
       const umamiDomains = process.env.NEXT_PUBLIC_UMAMI_DOMAINS;
-      umamiAnalytic =
-        typeof umamiScriptSrc === "string" && umamiScriptSrc.length > 0 ? (
-          <script
-            async
-            defer
-            src={umamiScriptSrc}
-            data-website-id={umamiWebsiteId}
-            data-do-not-track="true"
-            data-cache="true"
-            data-domains={umamiDomains}
-          ></script>
-        ) : null;
+
+      /** Set `NEXT_PUBLIC_UMAMI_SCRIPT_URL=""` to disable the Umami */
+      const hasValidUmamiVariables =
+        typeof umamiScriptSrc === "string" && umamiScriptSrc.length > 0;
+
+      umamiAnalytic = hasValidUmamiVariables ? (
+        <script
+          async
+          defer
+          src={umamiScriptSrc}
+          data-website-id={umamiWebsiteId}
+          data-do-not-track="true"
+          data-cache="true"
+          data-domains={umamiDomains}
+        ></script>
+      ) : null;
     }
 
     return (
