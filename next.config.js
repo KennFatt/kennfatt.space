@@ -1,6 +1,7 @@
 const withPlugins = require("next-compose-plugins");
 // const { withSentryConfig } = require("@sentry/nextjs");
 const withBundleAnalyzer = require("@next/bundle-analyzer");
+const withPWA = require("next-pwa");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -24,6 +25,14 @@ module.exports = withPlugins(
       withBundleAnalyzer,
       {
         enabled: process.env.ANALYZE === "true",
+      },
+    ],
+    [
+      withPWA,
+      {
+        pwa: {
+          dest: "public",
+        },
       },
     ],
     // [

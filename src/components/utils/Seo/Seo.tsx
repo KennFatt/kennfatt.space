@@ -36,6 +36,11 @@ export const Seo: FC<ISeo> = ({ title, description }) => {
 
   return (
     <Head>
+      <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+      />
+
       <title>{meta.title}</title>
       <meta name="title" content={meta.title} />
       <meta name="author" content={SEO_META_FALLBACK.title} />
