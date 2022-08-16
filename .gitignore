@@ -39,3 +39,7 @@ schema.graphql
 
 # Sentry
 .sentryclirc
+
+# Autogenereated service worker & workbox files (next-pwa)
+public/sw.js*
+public/workbox-*

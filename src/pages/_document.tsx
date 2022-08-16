@@ -51,7 +51,22 @@ export default class MyDocument extends Document {
           />
 
           <link rel="manifest" href="/static/seo/site.webmanifest" />
+          <meta name="msapplication-config" content="/browserconfig.xml" />
+
+          {/* PWA */}
+          <meta name="application-name" content="KennFatt's Space" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="default"
+          />
+          <meta name="apple-mobile-web-app-title" content="KennFatt's Space" />
+          <meta name="format-detection" content="telephone=no" />
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="msapplication-tap-highlight" content="no" />
+
           <meta name="theme-color" content="#678349" />
+          <meta name="msapplication-TileColor" content="##678349" />
 
           <meta
             name="google-site-verification"
