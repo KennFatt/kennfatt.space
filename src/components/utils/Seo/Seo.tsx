@@ -34,6 +34,8 @@ export const Seo: FC<ISeo> = ({ title, description }) => {
     description: description || SEO_META_FALLBACK.description,
   };
 
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_CANONICAL_URL}${router.pathname}`;
+
   return (
     <Head>
       <meta
@@ -45,27 +47,18 @@ export const Seo: FC<ISeo> = ({ title, description }) => {
       <meta name="title" content={meta.title} />
       <meta name="author" content={SEO_META_FALLBACK.title} />
       <meta name="description" content={meta.description} />
-      <link
-        rel="canonical"
-        href={`${process.env.NEXT_PUBLIC_CANONICAL_URL}${router.asPath}`}
-      />
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* OG */}
       <meta property="og:type" content="website" />
-      <meta
-        property="og:url"
-        content={`${process.env.NEXT_PUBLIC_CANONICAL_URL}${router.asPath}`}
-      />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={meta.title} />
       <meta property="og:description" content={meta.description} />
       <meta property="og:image" content={SEO_META_FALLBACK.thumbnail} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta
-        property="twitter:url"
-        content={`${process.env.NEXT_PUBLIC_CANONICAL_URL}${router.asPath}`}
-      />
+      <meta property="twitter:url" content={canonicalUrl} />
       <meta property="twitter:title" content={meta.title} />
       <meta property="twitter:description" content={meta.description} />
       <meta property="twitter:image" content={SEO_META_FALLBACK.thumbnail} />
