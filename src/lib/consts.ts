@@ -3,6 +3,7 @@ import type { IContactIconLink } from "components/base/ContactIconLink";
 import DribbleSvg from "assets/vectors/dribbble.svg";
 import GithubSvg from "assets/vectors/github.svg";
 import HackerRankSvg from "assets/vectors/hackerrank.svg";
+import LeetCodeSvg from "assets/vectors/leetcode.svg";
 import LinkedInSvg from "assets/vectors/linkedin.svg";
 import TwitterSvg from "assets/vectors/twitter.svg";
 
@@ -28,6 +29,11 @@ export const CONTACT_LIST: IContactIconLink[] = [
     title: "HackerRank",
     href: process.env.NEXT_PUBLIC_CONTACT_HACKERRANK || "",
     iconComponent: HackerRankSvg,
+  },
+  {
+    title: "LeetCode",
+    href: process.env.NEXT_PUBLIC_CONTACT_LEETCODE || "",
+    iconComponent: LeetCodeSvg,
   },
   {
     title: "Twitter",
