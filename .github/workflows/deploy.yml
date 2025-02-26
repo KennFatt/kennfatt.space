@@ -23,6 +23,6 @@ jobs:
           script: |
             cd ${{ secrets.PROJECT_DIR }}
             git pull --force origin main
-            yarn
-            yarn build
+            pnpm i
+            pnpm build
             pm2 restart ${{ secrets.APP_PM2_IDENTIFIER }}
