@@ -21,8 +21,10 @@ jobs:
           password: ${{ secrets.SSH_PASSPHRASE }}
           port: 22
           script: |
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             cd ${{ secrets.PROJECT_DIR }}
             git pull --force origin main
-            $(command -v pnpm) i
-            $(command -v pnpm) build
-            $(command -v pm2) restart ${{ secrets.APP_PM2_IDENTIFIER }}
+            pnpm i
+            pnpm build
+            pm2 restart ${{ secrets.APP_PM2_IDENTIFIER }}
