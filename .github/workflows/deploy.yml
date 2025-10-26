@@ -22,7 +22,11 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login oci-registry.kennfatt.dev -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Build and push image
-        run: |
-          docker build -t kennfatt.space:latest .
-          docker tag kennfatt.space:latest oci-registry.kennfatt.dev/kennfatt.space:latest
-          docker push oci-registry.kennfatt.dev/kennfatt.space:latest
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: oci-registry.kennfatt.dev/kennfatt.space:latest
+          build-args: |
+            GRAPHCMS_URI=${{ secrets.GRAPHCMS_URI }}
+            GRAPHCMS_TOKEN=${{ secrets.GRAPHCMS_TOKEN }}
