@@ -10,6 +10,9 @@ on:
 jobs:
   build-and-push:
     name: Build and push
+    env:
+      GRAPHCMS_URI: ${{ secrets.GRAPHCMS_URI }}
+      GRAPHCMS_TOKEN: ${{ secrets.GRAPHCMS_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
