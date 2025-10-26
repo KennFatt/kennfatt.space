@@ -26,7 +26,7 @@ export interface IHowICanHelp {
  * Component HowICanHelp is a bock (section) component to show and highlight all my expertises.
  */
 export const HowICanHelp: FC<IHowICanHelp> = ({ skillCards }) => {
-  if (skillCards === [] || !skillCards) {
+  if (skillCards?.length === 0 || !skillCards) {
     return null;
   }
 
