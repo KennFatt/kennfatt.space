@@ -1,0 +1,9 @@
+services:
+  web:
+    image: oci-registry.kennfatt.dev/kennfatt.space:latest
+    container_name: kennfatt.space
+    restart: always
+    ports:
+      - "9090:9090"
+    env_file:
+      - .env.local

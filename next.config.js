@@ -9,6 +9,7 @@ const nextConfig = {
   poweredByHeader: false,
   swcMinify: true,
   images: { domains: ["media.graphassets.com"] },
+  output: 'standalone',
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
