@@ -20,6 +20,10 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+ARG GRAPHCMS_URI
+ARG GRAPHCMS_TOKEN
+ENV GRAPHCMS_URI=$GRAPHCMS_URI
+ENV GRAPHCMS_TOKEN=$GRAPHCMS_TOKEN
 RUN npm i --cpu=x64 --os=linux --libc=musl sharp
 RUN npm run build
 
